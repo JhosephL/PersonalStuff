@@ -1043,7 +1043,7 @@ print("in_Stream = open (\"eg_SoloLearn.txt\")")
 print()
 
 print("The another way to open a file is:")
-print("in_Stream = open (\"eg_Sololearn.txt , mode)")
+print("in_Stream = open (\"eg_Sololearn.txt\" , mode)")
 # the variable is a file object, file-like object or a stream
 # OPEN is the action it will be taken on the file
 # 1. file's path
@@ -1133,7 +1133,7 @@ print("The 'write' function allows to write characters in a file.")
 print()
 
 print("The way to write in a text file is:")
-print("in_Stream.write . write (message)")
+print("in_Stream . write (message)")
 
 print()
 
