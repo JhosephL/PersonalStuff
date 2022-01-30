@@ -24,7 +24,7 @@ public class FileCreation extends Abs_Decorator {
         try {
 
             File fileObject = new File(pathFile) ;
-    
+
             if ( fileObject.createNewFile() ) {
                 System.out.println ("The file has been created.") ;
                 mCreateFileINFO(fileObject);
@@ -34,7 +34,7 @@ public class FileCreation extends Abs_Decorator {
             } else {
                 System.out.println ("Something else has happened with: " + fileObject) ;
             }
-    
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -44,7 +44,7 @@ public class FileCreation extends Abs_Decorator {
     }
 
     private static final void mCreateFileINFO ( File fileObject ) {
-        
+
         System.out.println ("FILE: " + fileObject.getName()) ;
         System.out.println ("PATH: " + fileObject.getPath()) ;
         System.out.println ("READ?: " + fileObject.canRead()) ;

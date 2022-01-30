@@ -2,8 +2,11 @@
 #include <iostream> // COUT function
 #include <string> // TO_STRING function
 
+
 using std::string; // to use STRING
-using std::to_string; // to use TO_STRING ( from INT toward STRING )
+using std::to_string; // to use TO_STRING ( from INT to STRING )
+using std::cout; // to use COUT
+using std::endl; // to use ENDL
 
 
 
@@ -14,9 +17,19 @@ void ALL_FROM () {
 }
 
 
-class cAbs_ToDo { // Abstract class
 
-    virtual string mAction () = 0 ;
+class cInter_Interface { // Interface class
+// ONLY PURE VIRTUAL METHODS
+
+    virtual string mAction () = 0 ; // Pure virtual method
+
+};
+
+
+class cAbs_ToDo : cInter_Interface { // Abstract class
+// PURE AND NON-PURE VIRTUAL METHODS
+
+    virtual string mAction ( ) { return "action"; } ; // Virtual method
 
 };
 
@@ -26,6 +39,7 @@ class cProduction : cAbs_ToDo {
     protected:
 
         string move;
+        static int moves; // Go to its initilization
 
     public:
 
@@ -89,19 +103,19 @@ class cUser : public cProduction {
         // GETS
         string getName () {
 
-            return name ;
+            return this->name ;
 
         }
 
         string getId () {
 
-            return id ;
+            return this->id ;
             
         }
 
         int getUser () {
 
-            return user ;
+            return this->user ;
 
         }
 
@@ -110,7 +124,7 @@ class cUser : public cProduction {
         // METHODS
         void mNumer_user () {
 
-            std::cout << "#: " << user << std::endl ;
+            cout << "#: " << user << endl ;
 
         }
 
@@ -154,7 +168,7 @@ class cComputer : public cProduction {
             // METHODS
             void mFormal_driver () {
 
-                std::cout << name << "'s driver: " << driver << std::endl ;
+                cout << name << "'s driver: " << driver << endl ;
 
             }
 
@@ -171,36 +185,39 @@ class cComputer : public cProduction {
 int main() {
 
 
-    std::cout << "\n\n\n\no0o0o0o0\tOPP. C++\to0o0o0o0\n\n\n\n" ;
+    cout << "\n\n\n\no0o0o0o0\tOPP. C++\to0o0o0o0\n\n\n\n" ;
 
 
     cUser u1 = cUser ( "AAA" , "123" , 1 , "Typing" ) ;
-    std::cout << u1.toString() << std::endl ;
+    cout << u1.toString() << endl ;
     u1.setId ( "111" ) ;
-    std::cout << u1.toString() << std::endl ;
+    cout << u1.toString() << endl ;
 
     cProduction * p_cP = & u1 ;
     p_cP -> mAction() ; // p_cP -> mAction() ; == *(p_cP).mAction() ;
 
 
-    std::cout << std::endl ;
+    cout << endl ;
 
     
     cComputer cp1 = cComputer ( "A1" , "Processing" ) ;
 
     cp1.driver = "SDD" ;
     cp1.mFormal_driver() ;
-    std::cout << cp1.toString() ;
+    cout << cp1.toString() ;
 
     cComputer * p_cC = & cp1 ;
     p_cC -> mAction() ; // p_cC -> mAction() ; == *(p_cC).mAction() ;
 
 
-    std::cout << "\n\n\n\no0o0o0o0\tOOP END\t\to0o0o0o0\n\n\n\n" << std::endl ;
+    cout << "\n\n\n\no0o0o0o0\tOOP END\t\to0o0o0o0\n\n\n\n" << endl ;
 
 
 return 0;
 }
+
+// STATIC variables initialization
+int cProduction::moves = 1;
 
 
 

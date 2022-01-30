@@ -56,11 +56,11 @@ public class syntaxANDfunctions {
         System.out.println ("\tmForPrinting\t\tMETHOD\n") ;
 
         System.out.println (
-        
+
             "System.out.print(): Syntax for printing without line jump or a new line."
             +"\n"+
             "System.out.println(): Syntax for printing with line jump or a new line."
-        
+
         );
 
     }
@@ -97,9 +97,9 @@ public class syntaxANDfunctions {
 
         System.out.println ("Scanner in_data = new Scanner (System.in): instanciation of a Scanner object.") ;
         // in_data is a convention for the Scanner object.
-        
+
         System.out.println();
-        
+
         System.out.println ("DataType nameVariable = in_data.nextByte(): calling of the Scanner object for saving BYTE values.") ;
         System.out.println ("DataType nameVariable = in_data.nextShort(): calling of the Scanner object for saving SHORT values.") ;
         System.out.println ("DataType nameVariable = in_data.nextInt(): calling of the Scanner object for saving INTERGER values.") ;
@@ -118,7 +118,7 @@ public class syntaxANDfunctions {
         String charToCompleteTableAbove = "-" ; String toCompleteTableAbove = charToCompleteTableAbove.repeat(121) ;
         System.out.println (toCompleteTableAbove) ;
         System.out.println (
-            
+
             "|     byte\t|1 byte\t|\tStores whole numbers from -128 to 127\t\t\t\t\t\t\t|"
             +"\n"+
             "|     short\t|2 bytes|\tStores whole numbers from -32,768 to 32,767\t\t\t\t\t\t|"
@@ -152,7 +152,7 @@ public class syntaxANDfunctions {
     public static void mConditionalStatements () {
 
         System.out.println ("\tmConditionalStatements\tMETHOD\n") ;
-        
+
         System.out.println (
 
             "if ( condition ) {"
@@ -379,7 +379,7 @@ public class syntaxANDfunctions {
             "}"
 
         );
-        
+
         /*
             Any ENUM list can be treated as a class, hence can be added an access modifier before 'enum'.
             If the values inside a ENUM have parameters, the ENUM list deserves its own constructor within it.
@@ -426,7 +426,7 @@ public class syntaxANDfunctions {
             "\treturn this;"
             +'\n'+'\n'+
             "}"
-        
+
         ); // In this way, it is possible to turn a normal SET in a SET method chaining.
 
         System.out.println();
@@ -452,7 +452,7 @@ public class syntaxANDfunctions {
             "}"
 
         );
-        
+
         /*
 
             It is preferable to use super() (inside the constructor) when inheritance is used.
@@ -479,7 +479,7 @@ public class syntaxANDfunctions {
         );
 
         System.out.println();
-        
+
         System.out.println (
 
             "className ( parameters ) {"
@@ -597,17 +597,17 @@ public class syntaxANDfunctions {
 
         // non-static context upon the inner class
         System.out.println (
-        
+
             "outerClass objectName_fromOC = new outerClass() ;" +'\n'+ 
             "objectName_fromOC.innerClass objectName_fromIC = objectName_fromOC.new innerClass() ;" +'\n'
-        
+
         );
 
         // static context upon inner class
         System.out.println (
-        
+
             "outerClass.innerClass objectName_fromIC = new outerClass.innerClass ;" +'\n'
-        
+
         );
 
         // Inner classes can also be defined and implemented inside outerClass' methods.
