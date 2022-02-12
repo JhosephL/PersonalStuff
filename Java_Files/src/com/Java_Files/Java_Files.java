@@ -13,7 +13,7 @@ public class Java_Files {
 
     public static void main ( String[] args ) {
 
-        final String PATH = "E:\\inASUS_TUF\\Docs\\Visual Studio Code\\Projects\\Java_Files (Incomplete)\\src\\com\\Java_Files\\testFile.txt";
+        final String PATH = "path\\testFile.txt";
 
         FileCreation.mCreateFile(PATH);
 
