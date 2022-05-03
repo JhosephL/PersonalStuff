@@ -1,0 +1,109 @@
+
+
+ * * * * *  TERMINAL COMMANDS  * * * * *
+
+CREATE A FILE FROM TERMINAL:
+vim <FILE NAME>
+OR
+vim <FILE NAME>.<FILE EXTENSION>
+
+
+EXECUTE TERMINAL COMMANDS FROM VIM:
+:!<command line>
+
+
+
+
+* * * * *  MODES  * * * * *
+
+ENTER IN NORMAL MODE:
+-Escape key-
+
+
+ENTER IN INSERT MODE ...
+... BEFORE THE SELECTED CHARACTER:
+-Insert key-
+OR
+-i key-
+... AFTER THE SELECTED CHARACTER:
+-a key-
+... AT THE END OF THE LINE:
+-A key-
+... AT THE BEGINNING OF THE LINE:
+-I key-
+... BY ADDING AN ENTER AT THE BEGINNING OF THE LINE:
+-O key-
+... BY ADDING AN ENTER AT THE END OF THE LINE:
+-o key-
+
+
+ENTER IN VISUAL MODE ...
+... NORMAL:
+-v key-
+... PER LINE:
+-Shift key- AND -v key- AT THE SAME TIME
+OR
+-V key-
+... PER BLOCK:
+-v key- AND -Control key- AT THE SAME TIME
+
+
+
+
+* * * * *  VIM COMMANDS  * * * * *
+
+SAVE WORK IN VIM EDITOR:
+:w
+
+
+QUIT FROM VIM EDITOR:
+:q
+
+
+QUIT FROM VIM EDITOR ABRUPLTY (MAYBE WITHOUT SAVING CHANGES):
+:q!
+
+
+COPY FROM VIM:
+{normal mode}
+{any visual mode}
+{select text}
+y
+
+
+PASTE FROM VIM TO VIM:
+{normal mode with ESCAPE KEY}
+p
+
+
+COPY FROM VIM RECORDS TO VIM:
+{normal mode}
+{any visual mode}
+{select text}
+"<name of the letter>y
+
+
+PASTE FROM VIM RECORDS TO VIM:
+{normal mode}
+{any visual mode}
+{select text}
+"<name of the letter>p
+
+
+COPY FROM VIM TO CLIPBOARD:
+"+y
+
+
+PASTE FROM CLIPBOARD TO VIM:
+"+p
+
+
+UNDOING:
+{normal mode}
+u
+
+
+REDOING:
+{normal mode}
+-Ctrl key- AND -r key- AT THE SAME TIME
+
