@@ -8,6 +8,7 @@ set guifont=Consolas:h18:cANSI
 set laststatus=2
 highlight StatusLine ctermfg=black
 set statusline+=%F
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Use the internal diff if available.
 " Otherwise use the special 'diffexpr' for Windows.
