@@ -37,7 +37,7 @@ public class syntaxANDfunctions {
         mMath();                        System.out.println("\n\n\n");
         mEnum();                        System.out.println("\n\n\n");
 
-        mGets_Sets();                   System.out.println("\n\n\n");
+        mGetters_Setters();             System.out.println("\n\n\n");
         mInheritance();                 System.out.println("\n\n\n");
         mConstructor();                 System.out.println("\n\n\n");
         mInterface();                   System.out.println("\n\n\n");
@@ -107,7 +107,7 @@ public class syntaxANDfunctions {
         System.out.println ("DataType nameVariable = in_data.nextFloat(): calling of the Scanner object for saving FLOAT values.") ;
         System.out.println ("DataType nameVariable = in_data.nextDouble(): calling of the Scanner object for saving DOUBLE values.") ;
         System.out.println ("DataType nameVariable = in_data.nextBoolean(): calling of the Scanner object for saving BOOLEAN values.") ;
-        // I personally think it is a good programming practice to close a Scanner object when this is not being used.
+        // I personally think it is a good programming practice to close a Scanner object when it is not being used.
 
     }
 
@@ -115,25 +115,27 @@ public class syntaxANDfunctions {
 
         System.out.println ("\tmDataTypes\t\tMETHOD\n") ;
 
-        String charToCompleteTableAbove = "-" ; String toCompleteTableAbove = charToCompleteTableAbove.repeat(121) ;
+        String charToCompleteTableAbove = "-" ; String toCompleteTableAbove = charToCompleteTableAbove.repeat(177) ;
         System.out.println (toCompleteTableAbove) ;
         System.out.println (
 
-            "|     byte\t|1 byte\t|\tStores whole numbers from -128 to 127\t\t\t\t\t\t\t|"
+            "|     byte\t|1 byte\t|\tStores whole numbers from -128 to 127\t\t\t\t\t\t\t|\tStarts with 0 as default value.\t\t\t|"
             +"\n"+
-            "|     short\t|2 bytes|\tStores whole numbers from -32,768 to 32,767\t\t\t\t\t\t|"
+            "|     short\t|2 bytes|\tStores whole numbers from -32,768 to 32,767\t\t\t\t\t\t|\tStarts with 0 as default value.\t\t\t|"
             +"\n"+
-            "|     int\t|4 bytes|\tStores whole numbers from -2,147,483,648 to 2,147,483,647\t\t\t\t|"
+            "|     int\t|4 bytes|\tStores whole numbers from -2,147,483,648 to 2,147,483,647\t\t\t\t|\tStarts with 0 as default value.\t\t\t|"
             +"\n"+
-            "|     long\t|8 bytes|\tStores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807\t|"
+            "|     long\t|8 bytes|\tStores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807\t|\tStarts with 0 as default value.\t\t\t|"
             +"\n"+
-            "|     float\t|4 bytes|\tStores fractional numbers. Sufficient for storing 6 to 7 decimal digits\t\t\t|"
+            "|     float\t|4 bytes|\tStores fractional numbers. Sufficient for storing 6 to 7 decimal digits\t\t\t|\tStarts with '0.0f' as default value.\t\t|"
             +"\n"+
-            "|     double\t|8 bytes|\tStores fractional numbers. Sufficient for storing 15 decimal digits\t\t\t|"
+            "|     double\t|8 bytes|\tStores fractional numbers. Sufficient for storing 15 decimal digits\t\t\t|\tStarts with '0.0d' as default value.\t\t|"
             +"\n"+
-            "|     boolean\t|1 bit\t|\tStores true or false values\t\t\t\t\t\t\t\t|"
+            "|     boolean\t|1 bit\t|\tStores true or false values\t\t\t\t\t\t\t\t|\tStarts with 'false' as default value.\t\t|"
             +"\n"+
-            "|     char\t|2 bytes|\tStores a single character/letter or ASCII values\t\t\t\t\t|"
+            "|     char\t|2 bytes|\tStores a single character/letter or ASCII values\t\t\t\t\t|\tStarts with '\\n0000' as default value.\t\t|"
+            +"\n"+
+            "|     String\t|# bytes|\tStores a sequence of 'char' data type.\t\t\t\t\t\t\t|\tStarts with 'null' as default value.\t\t|"
 
         );
         System.out.println (toCompleteTableAbove) ; System.out.println () ;
@@ -381,7 +383,8 @@ public class syntaxANDfunctions {
         );
 
         /*
-            Any ENUM list can be treated as a class, hence can be added an access modifier before 'enum'.
+            Any ENUM list can be treated as a class, however it is not one of those.
+            Hence can be added an access modifier before 'enum'.
             If the values inside a ENUM have parameters, the ENUM list deserves its own constructor within it.
             ENUMs lists can include different methods within them.
         */
@@ -389,9 +392,9 @@ public class syntaxANDfunctions {
     }
 
     // OOP
-    public static void mGets_Sets () {
+    public static void mGetters_Setters () {
 
-        System.out.println ("\tmGets_Sets\t\tMETHOD\n") ;
+        System.out.println ("\tmGetters_Setters\t\tMETHOD\n") ;
         
         System.out.println (
         
