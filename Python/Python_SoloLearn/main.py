@@ -1440,7 +1440,7 @@ print("SET DATA STRUCTURE IS UNORDERED, SO IT CANNOT BE INDEXED.")
 print("\n------------------------------------------------------------------------------------\n")
 
 
-# Instead of .append(), set daa structure uses .add()
+# Instead of .append(), set data structure uses .add()
 
 set_nums.add(0) # 0 does not exist in the set
 print("Due to the '.add(n)' function, the content of 'set_nums' is: ",set_nums)
