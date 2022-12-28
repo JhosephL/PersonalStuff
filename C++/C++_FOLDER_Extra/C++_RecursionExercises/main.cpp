@@ -1,17 +1,21 @@
 
+// Preprocessor directives
 #include <iostream>
 #include <cstring>
 
 using namespace std ;
 
 
-void ALL_FROM () {
 
+// Global statements
+void ALL_FROM () {
 
     // https://www.w3resource.com/c-programming-exercises/recursion/index.php
 
 }
 
+
+// Prototypes
 int fEx1(int number);
 int fEx2(int number,int stop);
 int fEx3(int number,int stop);
@@ -29,7 +33,8 @@ int main () {
     cout << "\n\n\n\n()()()()()\tRECURSION EXERCISES\t()()()()()\n\n\n\n" ;
 
 
-    // CODE
+    int int_aux = fEx1(3) ;
+    cout << int_aux ;
 
 
     cout << "\n\n\n\n()()()()()\tEND OF RECURSION EXERCISES\t()()()()()\n\n\n\n" << endl ;
@@ -183,7 +188,6 @@ int fEx9 (int array[],int size,int i_array,int trying_number,int result,int flag
     }
 
 }
-
 
 
 

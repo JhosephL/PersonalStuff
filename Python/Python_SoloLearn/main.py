@@ -2341,15 +2341,9 @@ print(),print()
 
 
 
-
-
-
-
 print("\n\n ()()()()>-- THIS IS THE END OF PYTHON --<()()()() \n\n\n\n\n\n")
 
 
 
 
-
-
-# To rest --->-->->     
+# To rest -->       

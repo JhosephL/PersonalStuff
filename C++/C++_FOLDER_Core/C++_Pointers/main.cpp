@@ -1,12 +1,15 @@
 
-#include <iostream> // cout and endl functions
+// Preprocessor directives
+#include <iostream> // 'cout' and 'endl' functions
 #include <stdint.h> // Address (hex) to int
-#include <cstring> // strlen (content pointer)
-#include <math.h> // pow and log functions
+#include <cstring> // 'strlen' (content pointer)
+#include <math.h> // 'pow' and 'log' functions
 
 using namespace std;
 
 
+
+// Global statements
 void ALL_FROM () {
 
 	// https://www.youtube.com/watch?v=zuegQmMdy8M
@@ -14,6 +17,8 @@ void ALL_FROM () {
 
 }
 
+
+// Prototypes
 void fSizeDataTypes();
 void fWorkingWithPointers();
 void fPointersArithmetic();
@@ -31,7 +36,6 @@ void fCallbacks();					void fCallbacks_AUX(void(*p)());								void fCallbacks_A
 void fSOF();						void fMemoryLeak();
 
 void fPrubing();
-
 
 
 int main() {
@@ -62,7 +66,6 @@ int main() {
 
 
 	cout << " \n\n & *** \t END OF THE SESSION. \t *** & \n\n " << endl ;
-
 	cout << endl << endl;
 
 
@@ -70,9 +73,7 @@ return 0;
 }
 
 
-
 void fSizeDataTypes () {
-
 
 	cout << "\nSIZE OF DATA TYPES (IN BYTES)\n" << endl ;
 
@@ -94,12 +95,10 @@ void fSizeDataTypes () {
 
 	cout << endl;
 
-
 }
 
 
 void fWorkingWithPointers () {
-
 
 	cout << "\nPOINTERS INCEPTION\n" << endl ;
 
@@ -152,18 +151,17 @@ void fWorkingWithPointers () {
 	cout << " \t Also it is possible to know the value of an (unknown) address." << endl ;
 	cout << " \t Evaluating '*(p+1)' at " << p+1 << ", its value is ==> " << *(p+1) << endl ;
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fPointersArithmetic () {
 
-
 	cout << "\nPOINTERS ARITHMETIC\n" << endl ;
 
-	
+
 	/* --->-->-> */ int a = 233; /* <-<--<--- */
 	/* --->-->-> */ int * p_Int = &a; /* <-<--<--- */
 
@@ -227,14 +225,13 @@ void fPointersArithmetic () {
 
 	/* VOID* HOLDS NOTHING BUT ADRESSES */
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fPointersToPointers () {
-
 
 	cout << "\nPOINTERS TO POINTERS\n" << endl ;
 
@@ -283,16 +280,16 @@ void fPointersToPointers () {
 	cout << " \t The value at 'p5' is pointing \t ==> \t " << *p5 << endl ; // D
 	cout << " \t Toward 'num' from 'p5' \t ==> \t " << ( *( *( *( *( *p5 ) ) ) ) ) << endl ; // *
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fCallByReference () {
 
-
 	cout << "\nCALLING BY REFERENCE\n" << endl ;
+
 
 	/* --->-->-> */ int a = 100; /* <-<--<--- */
 
@@ -302,8 +299,8 @@ void fCallByReference () {
 
 	cout << " \t Evaluating 'fCallByReferenceAUX(&a)'. The new that holds 'a' is ==> " << a << endl ;
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -316,9 +313,9 @@ void fCallByReference_AUX ( int * p_a ) {
 
 void fPointersANDarrays () {
 
-
 	cout << "\nPOINTERS AND ARRAYS\n" << endl ;
-	
+
+
 	/* --->-->-> */ int a[5] = {1,2,3,4,5}; /* <-<--<--- */
 	/* --->-->-> */ int * p_a = &a[0]; /* <-<--<--- */
 
@@ -344,16 +341,16 @@ void fPointersANDarrays () {
 		cout << " \t a [" << i%5 << "] \t " << &a[i] << " == " << a[i] << endl ; // FOR ADDRESS: &a[i] == (a+i) // FOR HOLDING VALUES: a[i] == *(a+i)
 	}
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fArraysAsFA () {
 
-
 	cout << "\nARRAYS BETWEEN FUNCTIONS\n" << endl ;
+
 
 	/* --->-->-> */ int a[5] = {1,2,3,4,5}; /* <-<--<--- */
 	/* --->-->-> */ int array_size = sizeof(a)/sizeof(a[0]); /* <-<--<--- */
@@ -374,8 +371,8 @@ void fArraysAsFA () {
 		cout << " \t " << i << endl ;
 	}
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -390,8 +387,8 @@ void fArraysAsFA_AUX ( int array_int[] , int array_size ) {
 
 void fCharactersAandP () {
 
-
 	cout << "\nCHARACTERS AND ARRAY POINTERS\n" << endl ;
+
 
 	/* --->-->-> */ char a[6] = {'H','e','l','l','o','\0'}; /* <-<--<--- */ // Explicit way to put null character at initialize
 	/* --->-->-> */ char b[6] = "World"; /* <-<--<--- */ // Implicit way to put null charater at initialize
@@ -436,8 +433,8 @@ void fCharactersAandP () {
 	// 'p' CAN BE A CONSTANT POINTER CHARACTER (conts char * p) BUT IF IT WERE, 'p' COULDN'T MODIFY 'a'
 	// char* is a mutable pointer to a mutable character/string. const char* is a mutable pointer to an immutable character/string
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -452,8 +449,8 @@ void fCharactersAandP_AUX (char * aux) {
 
 void f2Dpointers () {
 
-
 	cout << "\nTWO DIMENSIONAL POINTERS\n" << endl ;
+
 
 	/* --->-->-> */ int m[3][3] = {1,2,3,4,5,6,7,8,9}; /* <-<--<--- */
 
@@ -520,16 +517,16 @@ void f2Dpointers () {
 
 	cout << " \t 'p_m' address : 'm' address " << " \t ==> \t " << p_m << " == " << m << endl ;
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fMultiDimArrays () {
 
-
 	cout << "\nMULTI-DIMENSIONAL ARRAYS\n" << endl ;
+
 
 	/* --->-->-> */ int m[2][2][2][2] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; /* <-<--<--- */
 	/* --->-->-> */ int size_m = sizeof(m) / 4;  /* <-<--<--- */
@@ -538,8 +535,8 @@ void fMultiDimArrays () {
 
 	fMultiDimArrays_AUX(m,size_m);
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -585,8 +582,8 @@ void fMultiDimArrays_AUX ( int (*aux_m)[2][2][2] , int size_m ) {
 
 void fDynamicMemory () {
 
-
 	cout << "\nDYNAMIC MEMORY\n" << endl ;
+
 
 	/* --->-->-> */ int * p = new int;  /* <-<--<--- */
 
@@ -621,16 +618,16 @@ void fDynamicMemory () {
 	cout << " \t Evaluating 'delete [] p'. The address at 'p' is pointing ==> " << p << endl ;
 	cout << " \t Evaluating 'delete [] p'. The content of 'p' is ==> " << *p << endl ;
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fPointersAsFunctions () {
 
-
 	cout << "\nPOINTERS AS FUNCTION RETURN\n" << endl ;
+
 
 	/* --->-->-> */ int a = 2, b = 3; /* <-<--<--- */
 
@@ -652,8 +649,8 @@ void fPointersAsFunctions () {
 	cout << " \t Evaluating 'fPointersAsFunctions_AUX'. The address at 'p' is pointing ==> " << p << endl ;
 	cout << " \t Evaluating 'fPointersAsFunctions_AUX'. The value in " << p << " is " << *p << endl ;
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -666,15 +663,14 @@ int * fPointersAsFunctions_AUX ( int * base , int * exponent ) {
 
 	*result = (int) pow(aux_b,aux_exp);
 
-
 return result;
 }
 
 
 void fFunctionPointers () {
 
-
 	cout << "\nFUNCTION POINTERS\n" << endl ;
+
 
 	/* --->-->-> */ double ( * p )( int , int ); /* <-<--<--- */
 
@@ -720,8 +716,8 @@ void fFunctionPointers () {
 
 	/* --->-->-> */ (*p3)("'fFunctionPointers'"); /* <-<--<--- */
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -750,8 +746,8 @@ void fFunctionPointers_AUX3 ( string text ) {
 
 void fCallbacks () {
 
-
 	cout << "\nFUNCTION POINTERS AND CALLBACKS\n" << endl ;
+
 
 	/* --->-->-> */ fCallbacks_AUX(fCallbacks_AUX2); /* <-<--<--- */
 
@@ -794,8 +790,8 @@ void fCallbacks () {
 
 	cout << " } " << endl ;
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -816,39 +812,38 @@ int fCallbacks_AUX3 ( const void * a , const void * b ) {
 	int aux_a = *((int*)a); // content ( typecasting )
 	int aux_b = *((int*)b); // content ( typecasting )
 
-
 return abs(aux_a) - abs(aux_b); // a-b ascending // b-a descending // abs: absolute value
 }
 
 
 void fSOF () {
 
-
 	cout << "\nSTACK OVERFLOW\n" << endl ;
 	cout << "\tSTACK MEMORY SECTION\n" ;
+
 
 	// Everything from STACK MEMORY SECTION is deallocated automatically
 	// Stack overflow (STACK MEMORY SECTION): https://pvs-studio.com/en/blog/terms/0087/
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
 
 void fMemoryLeak () {
 
-
 	cout << "\nMEMORY LEAK\n" << endl ;
 	cout << "\tHEAP MEMORY SECTION\n" ;
+
 
 	// The improper use of dynamic memory is called MEMORY LEAK
 	// The allocated memory of depuration goes to HEAP MEMORY SECTION
 	// It's efficient deallocate variables from memory
 	// The no deallocated and unused variables are called GARBAGE
 
-	cout << endl;
 
+	cout << endl;
 
 }
 
@@ -857,13 +852,14 @@ void fMemoryLeak () {
 void fPrubing () {
 
 	cout << "\n| xxxxx THIS IS A TRYING, NUMBSKULL xxxxx |\n" << endl ;
-	
+
+
 	// CODE
+
 
 	cout << "\n| xxxxx END OF THE TRYING, KNUCKLEHEAD xxxxx |\n" << endl ;
 
 }
-
 
 
 

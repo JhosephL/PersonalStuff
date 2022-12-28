@@ -1,7 +1,7 @@
 
-#include <iostream> // COUT function
+// Preprocessor directives
+#include <iostream> // COUT and ENDL functions
 #include <string> // TO_STRING function
-
 
 using std::string; // to use STRING
 using std::to_string; // to use TO_STRING ( from INT to STRING )
@@ -10,13 +10,12 @@ using std::endl; // to use ENDL
 
 
 
+// Global statements
 void ALL_FROM () {
 
     // https://www.youtube.com/watch?v=wN0x9eZLix4&t=950s
 
 }
-
-
 
 class cInter_Interface { // Interface class
 // ONLY PURE VIRTUAL METHODS
@@ -25,14 +24,12 @@ class cInter_Interface { // Interface class
 
 };
 
-
 class cAbs_ToDo : cInter_Interface { // Abstract class
 // PURE AND NON-PURE VIRTUAL METHODS
 
     virtual string mAction ( ) { return "action"; } ; // Virtual method
 
 };
-
 
 class cProduction : cAbs_ToDo {
 
@@ -128,7 +125,7 @@ class cUser : public cProduction {
 
         }
 
-        // toString
+        // toString method
         string toString () {
 
             return "name: " + name + ". ID: " + id + ". user: " + to_string(user) + ". " + mAction() ;
@@ -172,7 +169,7 @@ class cComputer : public cProduction {
 
             }
 
-            //toString
+            // toString method
             string toString () {
 
                 return "name: " + name + ". " + move ;
@@ -180,6 +177,9 @@ class cComputer : public cProduction {
             }
 
 };
+
+
+// Prototypes
 
 
 int main() {
@@ -218,7 +218,6 @@ return 0;
 
 // STATIC variables initialization
 int cProduction::moves = 1;
-
 
 
 

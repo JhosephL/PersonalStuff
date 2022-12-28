@@ -1,4 +1,5 @@
 
+// Preprocessor directives
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
@@ -6,8 +7,12 @@
 using namespace std;
 
 
+
+// Global statements
 const int T = 8;
 
+
+// Prototypes
 void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int vX[]);
 void fSeleccion(int v[]);
 void fBurbuja(int v[]);
@@ -18,6 +23,9 @@ void fX(int v[]);
 
 int main() {
 
+    cout << "\n\n\n" << endl ;
+
+
     int vect[T], vect2[T], vect3[T], vect4[T], vectX[T];
 
 
@@ -25,7 +33,6 @@ int main() {
 
 
     cout << endl << "-- Ordenamiento de Cadenas: --" << endl << endl;
-
 
 
     fSeleccion(vect);
@@ -101,12 +108,11 @@ int main() {
             cout << vectX[i] << endl;
     }
 
-    cout << endl;
 
+    cout << "\n\n\n\tALL RIGHT!\n\n\n\n" << endl ;
 
-    return 0;
+return 0;
 }
-
 
 
 void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int vX[]) {
@@ -140,7 +146,6 @@ void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int
 
 
 
-
     cout << "Cadena 2" << endl;
 
     for (int i = 0; i < T; i++) {
@@ -160,7 +165,6 @@ void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int
     }
 
     cout << endl;
-
 
 
 
@@ -209,7 +213,6 @@ void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int
 
 
 
-
     cout << "Cadena X" << endl;
 
     for (int i = 0; i < T; i++) {
@@ -233,9 +236,7 @@ void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int
 
     cout << endl;
 
-
 }
-
 
 
 void fSeleccion(int v[]) {
@@ -261,9 +262,7 @@ void fSeleccion(int v[]) {
 
     }
 
-
 }
-
 
 
 void fBurbuja(int v[]) {
@@ -280,9 +279,7 @@ void fBurbuja(int v[]) {
         }
     }
 
-
 }
-
 
 
 void fInsercion(int v[]) {
@@ -305,9 +302,7 @@ void fInsercion(int v[]) {
 
     }
 
-
 }
-
 
 
 void fQuickSort(int v[]) {
@@ -353,7 +348,6 @@ void fQuickSort(int v[]) {
 }
 
 
-
 void fX(int v[]) { // No sé que hice pero funciona.
 
     int aux = 0;
@@ -367,9 +361,8 @@ void fX(int v[]) { // No sé que hice pero funciona.
         }
     }
 
-
 }
 
 
 
-// Desc -->     
+// To rest -->      
