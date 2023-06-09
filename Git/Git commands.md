@@ -240,6 +240,7 @@ Command | Description
 </h1>
 <br>
 <br>
+<br>
 
 
 ![Git's working scheme](https://github.com/JhosephL/PersonalStuff/assets/68712197/7c960ab4-bc49-4b70-897b-4d853afe35ba)
