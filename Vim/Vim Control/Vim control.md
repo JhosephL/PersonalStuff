@@ -204,6 +204,8 @@ Command | Description
 ## Other commands
 <br>
 
+Command | Description
+------- | -----------
 [ visual block ] ; _Select characters_ ; `I` or `A` ; _Type characters_ ; _Escape key_ | Multicursor.
 
 
@@ -217,4 +219,4 @@ Command | Description
 
 # Notes
 
-* There is no "delete" option, by cutting and no pasting is enough. It applies for "multicursor".
+* There is no "delete" option; by cutting and no pasting is enough. It applies for "multicursor".
