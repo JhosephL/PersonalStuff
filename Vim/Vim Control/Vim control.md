@@ -206,7 +206,7 @@ Command | Description
 
 Command | Description
 ------- | -----------
-[ visual block ] ; _Select characters_ ; `I` or `A` ; _Type characters_ ; _Escape key_ | Multicursor.
+[ n ] ; [ visual block ] ; _Select characters_ ; `I` or `A` ; _Type characters_ ; _Escape key_ | Multicursor.
 
 
 
