@@ -1,17 +1,37 @@
-" Vim with all enhancements
+
+" VIM WITH ALL ENHANCEMENTS "
+
 source $VIMRUNTIME/vimrc_example.vim
 
-" Customization
-set nu
-colorscheme koehler
-set guifont=Consolas:h18:cANSI
-set laststatus=2
-highlight StatusLine ctermfg=black
-set statusline+=%F
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Use the internal diff if available.
-" Otherwise use the special 'diffexpr' for Windows.
+" CUSTOMIZATION "
+
+"" Set lines enumeration.
+""" There is no enumeration if the feature is absent.
+set number
+"" Select a theme.
+""" Schemes: desert, molokai, gruvbox, solarized, koehler, monokai, and jellybeans.
+colorscheme koehler
+"" Select font, size and characters features.
+set guifont=Consolas:h18:cANSI
+"" Show status bar.
+""" 0: never show; 1: show only with multiple tabs; 2: always show.
+set laststatus=2
+"" Select a theme for status bar.
+highlight StatusLine ctermfg=black
+"" Customize the status bar.
+""" Adding file name, conditional for read-only, lines, columns, and file percentage.
+let &statusline=' %F    %{&readonly?"[RO]":""}%=%-9.(%l,%c%V%)%{line(".")*100/line("$")}%%  '
+"" Avoid auto-completing of comments.
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"" Define tab size.
+set tabstop=4
+
+
+" BACKING UP FILE CHANGES "
+
+"" Use the internal diff if available.
+"" Otherwise use the special 'diffexpr' for Windows.
 if &diffopt !~# 'internal'
   set diffexpr=MyDiff()
 endif
@@ -47,4 +67,3 @@ function MyDiff()
     let &shellxquote=l:shxq_sav
   endif
 endfunction
-
