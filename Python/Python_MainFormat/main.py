@@ -1,29 +1,30 @@
 
-# imports
+# IMPORTS
 
 
 
-# other functions
-def function_01 ( ) :
-
-    print ("CODE")
-
-
-
-# main function declaration
+# MAIN FUNCTION DECLARATION
 def main ( ) :
 
-
     print ("\n\n\n\n")
+
 
     function_01()
 
+
     print ("\n\n\n\n")
 
 
+# OTHER FUNCTIONS
+def function_01 ( ) :
 
-# main function implementation
-main()
+    print ("# CODE")
+
+
+
+# MAIN FUNCTION IMPLEMENTATION
+if __name__ == "__main__" :
+    main()
 
 
 
