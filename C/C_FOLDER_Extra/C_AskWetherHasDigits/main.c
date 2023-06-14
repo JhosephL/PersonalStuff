@@ -1,5 +1,4 @@
 
-
 // Preprocessor directives
 #include <stdio.h>
 #include <string.h>
@@ -22,13 +21,13 @@ int main ( ) {
 
     char inputStringValue[1000] ;
 
-    puts ("Digite una cadena de texto.") ;
+    puts ("Type a text string.") ;
     fgets (inputStringValue,1000,stdin) ;
 
     if ( askHasDigits (inputStringValue) ) {
-	    puts ("\nLa cadena tiene dígitos.") ;
+	    puts ("\nThe string typed has digits.") ;
     } else {
-	    puts ("\nLa cadena no tiene dígitos.") ;
+	    puts ("\nThe string typed has no digits.") ;
     }
 
 
@@ -52,6 +51,7 @@ int askHasDigits ( char string[] ) {
  
 return 0 ;
 }
+
 
 
 
