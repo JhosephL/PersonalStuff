@@ -80,7 +80,7 @@ int main ( ) {
         cout << "\tfinal values:" << endl ;
         function_PrintArray() ;
     
-    cout << endl ;
+    cout ;
 
 
     cout << "\n\n\nalgalgalgalgalgalg\tEND OF ALGORITHMS FOR ORDERING ARRAYS\talgalgalgalgalgalg\n\n\n\n" << endl ;
