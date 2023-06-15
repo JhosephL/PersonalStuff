@@ -4,299 +4,191 @@
 #include <stdlib.h>
 #include <time.h>
 
-using namespace std;
+using namespace std ;
 
 
 
 // Global statements
-const int T = 8;
+const int globalConst_intArraySize = 8 ;
+int* globalVariable_intArray ;
 
 
 // Prototypes
-void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int vX[]);
-void fSeleccion(int v[]);
-void fBurbuja(int v[]);
-void fInsercion(int v[]);
-void fQuickSort(int v[]);
-void fX(int v[]);
+void function_GenerateIntArray (void) ;
+void function_PrintArray (void) ;
+void function_Algorithm_Selection (void) ;
+void function_Algorithm_BubbleSort (void) ;
+void function_Algorithm_Insertion (void) ;
+void function_Algorithm_QuickSort (void) ;
 
 
-int main() {
+int main ( ) {
 
-    cout << "\n\n\n" << endl ;
+    cout << "\n\n\n\nalgalgalgalgalgalg\tBEGINNING OF ALGORITHMS FOR ORDERING ARRAYS\talgalgalgalgalgalg\n\n\n\n" << endl ;
 
+    
+    /*
+    
+        Plan:
+            1). Assign memory and random values for the array.
+            2). Print the array, with the first values.
+            3). Modify the array according to an algoritm.
+            4). Print the array, with the array modified.
 
-    int vect[T], vect2[T], vect3[T], vect4[T], vectX[T];
+    */
+    
 
+    cout << "Selection ALGORITHM\n" << endl ;
 
-    fCreacionDeVectores(vect, vect2, vect3, vect4, vectX);
+        function_GenerateIntArray() ;
+        cout << "\tinitial values:" << endl ;
+        function_PrintArray() ;
+        function_Algorithm_Selection() ;
+        cout << "\tfinal values:" << endl ;
+        function_PrintArray() ;
+    
+    cout << endl ;
 
+    cout << "Bubble Sort ALGORITHM\n" << endl ;
 
-    cout << endl << "-- Ordenamiento de Cadenas: --" << endl << endl;
+        function_GenerateIntArray() ;
+        cout << "\tinitial values:" << endl ;
+        function_PrintArray() ;
+        function_Algorithm_BubbleSort() ;
+        cout << "\tfinal values:" << endl ;
+        function_PrintArray() ;
+    
+    cout << endl ;
 
+    cout << "Insertion ALGORITHM\n" << endl ;
 
-    fSeleccion(vect);
+        function_GenerateIntArray() ;
+        cout << "\tinitial values:" << endl ;
+        function_PrintArray() ;
+        function_Algorithm_Insertion() ;
+        cout << "\tfinal values:" << endl ;
+        function_PrintArray() ;
+    
+    cout << endl ;
 
-    cout << "De menor a mayor. Cadena 1" << endl;
+    cout << "Quick Sort ALGORITHM\n" << endl ;
 
-    for (int i = 0; i < T; i++) {
-        if (i != T - 1)
-            cout << vect[i] << " | ";
-        else
-            cout << vect[i] << endl;
-    }
-
-    cout << endl;
-
-
-
-    fBurbuja(vect2);
-
-    cout << "De mayor a menor. Cadena 2" << endl;
-
-    for (int i = 0; i < T; i++) {
-        if (i != T - 1)
-            cout << vect2[i] << " | ";
-        else
-            cout << vect2[i] << endl;
-    }
-
-    cout << endl;
-
-
-
-    fInsercion(vect3);
-
-    cout << "De menor a mayor. Cadena 3" << endl;
-
-    for (int i = 0; i < T; i++) {
-        if (i != T - 1)
-            cout << vect3[i] << " | ";
-        else
-            cout << vect3[i] << endl;
-    }
-
-    cout << endl;
-
-
-
-    fQuickSort(vect4);
-
-    cout << "De mayor a menor. Cadena 4" << endl;
-
-    for (int i = 0; i < T; i++) {
-        if (i != T - 1) {
-            cout << vect4[i] << " | ";
-        }
-        else {
-            cout << vect4[i] << endl;
-        }
-    }
-
-    cout << endl;
+        function_GenerateIntArray() ;
+        cout << "\tinitial values:" << endl ;
+        function_PrintArray() ;
+        function_Algorithm_QuickSort() ;
+        cout << "\tfinal values:" << endl ;
+        function_PrintArray() ;
+    
+    cout << endl ;
 
 
-
-    fX(vectX);
-
-    cout << "De menor a mayor. Cadena X" << endl;
-
-    for (int i = 0; i < T; i++) {
-        if (i != T - 1)
-            cout << vectX[i] << " | ";
-        else
-            cout << vectX[i] << endl;
-    }
-
-
-    cout << "\n\n\n\tALL RIGHT!\n\n\n\n" << endl ;
+    cout << "\n\n\nalgalgalgalgalgalg\tEND OF ALGORITHMS FOR ORDERING ARRAYS\talgalgalgalgalgalg\n\n\n\n" << endl ;
 
 return 0;
 }
 
 
-void fCreacionDeVectores(int vUno[], int vDos[], int vTres[], int vCuatro[], int vX[]) {
+void function_GenerateIntArray ( void ) {
 
-    srand(time(NULL));
+    globalVariable_intArray = new int[globalConst_intArraySize] ;
 
+    for ( int counter_i=0 ; counter_i < globalConst_intArraySize ; counter_i++ ) {
 
+        globalVariable_intArray[counter_i] = rand() % 10 ;
 
-    cout << "Cadena 1" << endl;
-
-    for (int i = 0; i < T; i++) {
-        vUno[i] = rand() % 10;
     }
-
-    for (int i = 0; i < T; i++) {
-        for (int ii = i + 1; ii < T; ii++) {
-            if (vUno[i] == vUno[ii]) {
-                vUno[ii] += 10;
-            }
-        }
-
-        if (i != T - 1) {
-            cout << vUno[i] << " | ";
-        }
-        else {
-            cout << vUno[i] << endl;
-        }
-    }
-
-    cout << endl;
-
-
-
-    cout << "Cadena 2" << endl;
-
-    for (int i = 0; i < T; i++) {
-        vDos[i] = rand() % 10;
-    }
-
-    for (int i = 0; i < T; i++) {
-        for (int ii = i + 1; ii < T; ii++) {
-            if (vDos[i] == vDos[ii])
-                vDos[ii] += 10;
-        }
-
-        if (i != T - 1)
-            cout << vDos[i] << " | ";
-        else
-            cout << vDos[i] << endl;
-    }
-
-    cout << endl;
-
-
-
-    cout << "Cadena 3" << endl;
-
-    for (int i = 0; i < T; i++) {
-        vTres[i] = rand() % 10;
-    }
-
-    for (int i = 0; i < T; i++) {
-        for (int ii = i + 1; ii < T; ii++) {
-            if (vTres[i] == vTres[ii])
-                vTres[ii] += 10;
-        }
-
-        if (i != T - 1)
-            cout << vTres[i] << " | ";
-        else
-            cout << vTres[i] << endl;
-    }
-
-    cout << endl;
-
-
-
-
-    cout << "Cadena 4" << endl;
-
-    for (int i = 0; i < T; i++) {
-        vCuatro[i] = rand() % 10;
-    }
-
-    for (int i = 0; i < T; i++) {
-        for (int ii = i + 1; ii < T; ii++) {
-            if (vCuatro[i] == vCuatro[ii])
-                vCuatro[ii] += 10;
-        }
-
-        if (i != T - 1)
-            cout << vCuatro[i] << " | ";
-        else
-            cout << vCuatro[i] << endl;
-    }
-
-    cout << endl;
-
-
-
-    cout << "Cadena X" << endl;
-
-    for (int i = 0; i < T; i++) {
-        vX[i] = rand() % 10;
-    }
-
-    for (int i = 0; i < T; i++) {
-        for (int ii = i + 1; ii < T; ii++) {
-            if (vX[i] == vX[ii]) {
-                vX[ii] += 10;
-            }
-        }
-
-        if (i != T - 1) {
-            cout << vX[i] << " | ";
-        }
-        else {
-            cout << vX[i] << endl;
-        }
-    }
-
-    cout << endl;
 
 }
 
 
-void fSeleccion(int v[]) {
+void function_PrintArray ( void ) {
 
-    int aux = 0, cont = 0;
+    cout << '\t' ;
 
-    for (int i = 0; i < T; i++) {
+    for ( int counter_i=0 ; counter_i < globalConst_intArraySize ; counter_i++ ) {
 
-        aux = v[i];
-        cont = i;
+        if ( counter_i+1 != globalConst_intArraySize ) {
+            cout << "| " << globalVariable_intArray[counter_i] << " " ;
+        } else {
+            cout << "| " << globalVariable_intArray[counter_i] << " |" ;
+        }
 
-        for (int ii = i + 1; ii < T; ii++) {
+    }
 
-            if (v[ii] < aux) {
-                aux = v[ii];
-                cont = ii;
+    cout << endl << endl ;
+
+}
+
+
+void function_Algorithm_Selection ( void ) {
+
+    int int_aux=0 , int_counter=0 ;
+
+    for ( int i=0 ; i < globalConst_intArraySize ; i++ ) {
+
+        int_aux = globalVariable_intArray[i] ;
+        int_counter = i ;
+
+        for ( int ii=(i+1) ; ii < globalConst_intArraySize ; ii++ ) {
+
+            if ( globalVariable_intArray[ii] < int_aux ) {
+
+                // Change the order from more-than to less-than.
+                int_aux = globalVariable_intArray[ii] ;
+                int_counter = ii ;
+
             }
 
         }
 
-        v[cont] = v[i];
-        v[i] = aux;
+        globalVariable_intArray[int_counter] = globalVariable_intArray[i] ;
+        globalVariable_intArray[i] = int_aux ;
 
     }
 
 }
 
 
-void fBurbuja(int v[]) {
+void function_Algorithm_BubbleSort ( void ) {
 
-    int aux = 0;
+    int int_aux=0 ;
 
-    for (int i = 0; i < T; i++) {
-        for (int ii = i + 1; ii < T; ii++) {
-            if (v[i] < v[ii]) {
-                aux = v[i];
-                v[i] = v[ii];
-                v[ii] = aux;
+    for ( int i=0 ; i < globalConst_intArraySize ; i++ ) {
+
+        for ( int ii=(i+1) ; ii < globalConst_intArraySize ; ii++ ) {
+
+            // Change the order from more-than to less-than.
+            if ( globalVariable_intArray[i] > globalVariable_intArray[ii] ) {
+
+                int_aux = globalVariable_intArray[i] ;
+                globalVariable_intArray[i] = globalVariable_intArray[ii] ;
+                globalVariable_intArray[ii] = int_aux ;
+
             }
+        
         }
+    
     }
 
 }
 
 
-void fInsercion(int v[]) {
+void function_Algorithm_Insertion ( void ) {
 
-    int num = 0, pos = 0, temp = 0;
+    int int_number=0 , int_position=0 , int_temporal=0 ;
 
-    for (int i = 1; i < T; i++) {
+    for ( int i=1 ; i < globalConst_intArraySize ; i++ ) {
 
-        num = v[i];
-        pos = i;
+        int_number = globalVariable_intArray[i] ;
+        int_position = i ;
 
-        while (v[pos - 1] > num && pos - 1 >= 0) {
+        while ( (globalVariable_intArray[int_position-1] > int_number) && (int_position-1 >= 0) ) {
 
-            temp = num;
-            v[pos] = v[pos - 1];
-            v[pos - 1] = temp;
-            pos--;
+            int_temporal = int_number ;
+            globalVariable_intArray[int_position] = globalVariable_intArray[int_position-1] ;
+            globalVariable_intArray[int_position-1] = int_temporal ;
+            int_position-- ;
 
         }
 
@@ -305,63 +197,76 @@ void fInsercion(int v[]) {
 }
 
 
-void fQuickSort(int v[]) {
+void function_Algorithm_QuickSort ( void ) {
 
-    int mayor = v[0], menor = v[T - 1], auxMayor = 0, auxMenor = 0;
+    int int_firstElement = globalVariable_intArray[0] ,
+        int_lastElement = globalVariable_intArray[globalConst_intArraySize-1] ,
+        int_majorElement = 0 ,
+        int_minorElement = 0
+    ;
 
-    for (int i = 0; i < T; i++) { // Encuentra el mayor y lo colocar al principio del vector.
-        if (v[i] > mayor) {
-            mayor = v[i];
-            auxMayor = v[0];
-            v[0] = mayor;
-            v[i] = auxMayor;
+    // This loop finds the major element of the array, and puts it at the beginning.
+    for ( int i=0 ; i < globalConst_intArraySize ; i++ ) {
+
+        if ( globalVariable_intArray[i] > int_firstElement ) {
+
+            int_firstElement = globalVariable_intArray[i] ;
+            int_majorElement = globalVariable_intArray[globalConst_intArraySize-1] ;
+            globalVariable_intArray[globalConst_intArraySize-1] = int_firstElement ;
+            globalVariable_intArray[i] = int_majorElement ;
+
         }
+
     }
 
-    for (int i = 0; i < T; i++) { // Encuentra el menor y lo coloca al final del vector.
-        if (v[i] < menor) {
-            menor = v[i];
-            auxMenor = v[T - 1];
-            v[T - 1] = menor;
-            v[i] = auxMenor;
+    // This loop finds the minor element of the array, and puts it at the end.
+    for ( int i=0 ; i < globalConst_intArraySize ; i++ ) {
+
+        if ( globalVariable_intArray[i] < int_lastElement ) {
+
+            int_lastElement = globalVariable_intArray[i] ;
+            int_minorElement = globalVariable_intArray[0] ;
+            globalVariable_intArray[0] = int_lastElement ;
+            globalVariable_intArray[i] = int_minorElement ;
+
         }
+
     }
 
+    int pivot = globalVariable_intArray[globalConst_intArraySize/2] ;
 
-    int pos = 0;
-    srand(time(NULL));
-    pos = 1 + rand() % (T - 1);
-    int pibote = v[pos];
+    int int_counter=0 , int_auxCounter=1 ;
 
-    int auxCont = 0, cont = 1;
+    for ( int i=0 ; i < (globalConst_intArraySize-1) ; i++ ) {
 
-    for (int i = 0; i < T - 1; i++) {
-        if (pibote < v[i + 1]) {
-            auxCont = v[cont];
-            v[cont] = pibote;
-            v[pos] = auxCont;
-            cont++;
+        if ( pivot < globalVariable_intArray[i+1] ) {
+
+            int_counter = globalVariable_intArray[int_auxCounter] ;
+            globalVariable_intArray[int_auxCounter] = pivot ;
+            globalVariable_intArray[globalConst_intArraySize/2] = int_counter ;
+            int_auxCounter++ ;
+
         }
+
     }
 
+    int_counter=0 , int_auxCounter=1 ;
+
+    for ( int i=0 ; i < (globalConst_intArraySize-1) ; i++ ) {
+
+        if ( pivot > globalVariable_intArray[i+1] ) {
+
+            int_counter = globalVariable_intArray[int_auxCounter] ;
+            globalVariable_intArray[int_auxCounter] = pivot ;
+            globalVariable_intArray[globalConst_intArraySize/2] = int_counter ;
+            int_auxCounter++ ;
+
+        }
+
+    }
 
 }
 
-
-void fX(int v[]) { // No sé que hice pero funciona.
-
-    int aux = 0;
-
-    for (int i = 0; i < T; i++) {
-        if (v[i - 1] > v[i]) {
-            aux = v[i];
-            v[i] = v[i - 1];
-            v[i - 1] = aux;
-            i -= 2;
-        }
-    }
-
-}
 
 
 
