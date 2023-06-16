@@ -127,9 +127,9 @@ int main ( ) {
 
     printf (
     
-        "\t\t -------------- ------------------------\t\t\n"
-        "\t\t|   CHARACTER  |       DATA TYPE        |\t\t\n"
-        "\t\t -------------- ------------------------ \t\t\n"
+        "\t\t -------------- ------------------------  \n"
+        "\t\t|   CHARACTER  |       DATA TYPE        | \n"
+        "\t\t -------------- ------------------------  \n"
         "\t\t|      %%c      |    Char                |\n"
         "\t\t|      %%d      |    Decimal.            |\n"  // or Integer.
         "\t\t|      %%u      |    Unsigned Decimal.   |\n"
@@ -141,11 +141,11 @@ int main ( ) {
         "\t\t|      %%o      |    Octal.              |\n"  // representation
         "\t\t|      %%x      |    Hexadecimal.        |\n"  // '%X' also works for hexadecimal representation.
         "\t\t|      %%n      |    Prints nothing.     |\n"
-        "\t\t -------------- ------------------------ \t\t"
+        "\t\t -------------- ------------------------"
         
     ) ;
 
-    printf ("\n\n\t\t•  An asterisk will skip the input field.") ; // %*<character>
+    printf ("\n\n\t\t•  An asterisk is used to separate field width, especified just before the actual argument.") ; // ("%*<character>",<# of width>,<argument>)
     printf ("\n\n\t\t•  A number is used to separate field width.") ; // %<# of width><character>
     printf ("\n\n\t\t•  A period is used to separate field width and precision (for decimal part).") ; // %<# of width>.<# of precision><character>
 
