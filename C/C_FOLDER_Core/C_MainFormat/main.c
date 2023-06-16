@@ -12,7 +12,7 @@
 // Prototypes
 
 
-int main ( ) {
+int main ( void ) {
 
     puts ("\n\n\n") ;
 

@@ -12,7 +12,7 @@ using namespace std ;
 // Prototypes
 
 
-int main () {
+int main ( void ) {
 
     cout << "\n\n\n" << endl ;
 
