@@ -9,5 +9,3 @@
 * The command to compile ´.o´ files: G++ *.o -o <executable file name>
 
 * The "executable file name" is ready to run.
-
-
