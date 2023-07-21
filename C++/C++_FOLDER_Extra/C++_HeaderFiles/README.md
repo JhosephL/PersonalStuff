@@ -4,8 +4,10 @@
 
 * The ´main.cpp´ file has the calling to ´function´ function from ´function.cpp´ file. This file needs to "include" the ´header.hpp´ file.
 
-* The command to use ´.o´ files: ```G++ -c <file name>.cpp -o <file name>.o```
+* The command to use ´.o´ files: ```G++ -c <file name>.cpp``` or ```G++ -c <file name>.cpp -o <file name>.o```
 
 * The command to compile ´.o´ files: ```G++ *.o -o <executable file name>```
+
+* The command to abbreviate last 2 steps: ```G++ <file name>.cpp -o <executable file name>```
 
 * The "executable file name" is ready to run.
