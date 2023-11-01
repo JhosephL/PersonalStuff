@@ -1,0 +1,1 @@
+RUNAS /user:<user> CMD
