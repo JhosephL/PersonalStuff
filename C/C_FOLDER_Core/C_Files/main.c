@@ -44,7 +44,7 @@ int main ( ) {
 	while ( !feof(file_pointer_R) ) {
 
 		// Assign memory to the temporal array or pointer.
-		temp_pointer = (char*) calloc(100,1) ;
+		temp_pointer = (char*) calloc(100,sizeof(char)) ;
 
 		// Save in the temporal array, the file's content where the reading pointer is pointing to.
 		fgets(temp_pointer,100,file_pointer_R) ;
@@ -55,15 +55,15 @@ int main ( ) {
 		// Save in the last row of the matrix, the content of the temporal array.
 		strcpy(char_matrix[lines_number],temp_pointer) ;
 		
-		// Releasing memory of the temporal array.
+		// Release memory of the temporal array.
 		free(temp_pointer) ;
 		temp_pointer = NULL ;
 		
 		// Update the number of lines.
 		lines_number++ ;
 
-		// Re-Assing memory to the matrix for the next iteration.
-		char_matrix = realloc(char_matrix,1) ;
+		// Re-Assing memory to the matrix for the whole matrix.
+		char_matrix = realloc(char_matrix,(lines_number+1)*sizeof(char*)) ;
 
 	}
 
@@ -77,6 +77,7 @@ int main ( ) {
 	puts("\n\t- CONTENT -\n");
 	for ( int counter=0 ; counter < lines_number ; counter++ ) {
 		printf ("%s",char_matrix[counter]) ;
+		free(char_matrix[counter]) ;
 	}
 	puts("");
 

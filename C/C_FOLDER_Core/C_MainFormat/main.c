@@ -1,15 +1,15 @@
 
-// Preprocessor directives
+// PREPROCESSOR DIRECTIVES
 #include <stdio.h>
 
 #pragma GCC poison gets
 
 
 
-// Global statements
+// GLOBAL STATEMENTS
 
 
-// Prototypes
+// PROTOTYPES
 
 
 int main ( void ) {
@@ -27,4 +27,4 @@ return 0;
 
 
 
-// To rest -->      
+// TO REST -->      
