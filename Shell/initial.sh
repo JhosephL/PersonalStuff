@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo
-echo
+echo ; echo
 
 sudo apt-get update
 sudo apt update
@@ -29,6 +28,6 @@ sudo apt-get clean
 echo
 
 sudo screenfetch
+sudo neofetch
 
-echo
 echo

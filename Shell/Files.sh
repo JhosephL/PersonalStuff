@@ -11,5 +11,7 @@ echo "content" > "file name"
 echo "content" >> "file name"
 
 # CAT
+## Overwrite.
 cat > "file name"
+## Append.
 cat >> "file name"
