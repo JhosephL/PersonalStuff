@@ -23,7 +23,7 @@ sudo apt autoremove -y
 echo
 
 sudo apt-get clean
-sudo apt-get clean
+sudo apt clean
 
 echo
 
