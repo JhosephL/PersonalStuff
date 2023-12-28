@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo
-echo
+echo ; echo
 
 sudo apt-get update
 sudo apt update
@@ -24,11 +23,11 @@ sudo apt autoremove -y
 echo
 
 sudo apt-get clean
-sudo apt-get clean
+sudo apt clean
 
 echo
 
 sudo screenfetch
+sudo neofetch
 
-echo
 echo
