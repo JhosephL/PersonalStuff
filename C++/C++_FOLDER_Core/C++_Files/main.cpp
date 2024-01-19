@@ -36,7 +36,7 @@ int main ( void ) {
 
 	function_readFile ( string_fileName ) ;
 
-	string string_newFileContent = "\nfour\nfive\0" ;
+	const string string_newFileContent = "\nfour\nfive\0" ;
 
 	function_appendFile ( string_fileName , string_newFileContent ) ;
 
