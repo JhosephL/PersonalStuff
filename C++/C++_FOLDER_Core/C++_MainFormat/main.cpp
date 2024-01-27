@@ -1,16 +1,18 @@
 
-// Preprocessor directives
+// PREPROCESSOR DIRECTIVES
 #include <iostream> // For 'cout' and 'endl' functions
 
 using namespace std ;
 
 
 
-// Global statements
+// GLOBAL STATEMENTS
 
 
-// Prototypes
+// PROTOTYPES
 
+
+/* MAIN FUNCTION DEFINITION */
 
 int main ( void ) {
 
@@ -24,6 +26,7 @@ int main ( void ) {
 
 return 0;
 }
+
 
 
 
