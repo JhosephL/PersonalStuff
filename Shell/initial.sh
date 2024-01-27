@@ -12,6 +12,21 @@ sudo apt upgrade -y
 
 echo
 
+sudo apt-get dist-upgrade
+sudo apt dist-upgrade
+
+echo
+
+sudo apt-get full-upgrade
+sudo apt full-upgrade
+
+echo
+
+sudo apt-get install --fix-broken
+sudo apt install --fix-broken
+
+echo
+
 sudo apt-get install --reinstall
 sudo apt install --reinstall
 
