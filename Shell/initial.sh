@@ -12,8 +12,8 @@ sudo apt upgrade -y
 
 echo
 
-sudo apt-get dist-upgrade
-sudo apt dist-upgrade
+sudo apt-get dist-upgrade -y
+sudo apt dist-upgrade -y
 
 echo
 
