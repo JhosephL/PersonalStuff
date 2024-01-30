@@ -141,7 +141,7 @@ int main ( void ) {  //  CISCO: "This 'void' data type is a convention derived f
             "\tSTATIC CASTING\n\n"
                 "\t\t... = ( <new data type> ) <value to cast> ;\n\n"
             "\tDYNAMIC CASTING\n\n"  // Inside a data stream.
-                "\t\t... << static_cast <(new data type)>(<value to cast>) ... ;"
+                "\t\t... << static_cast <new data type between diamond operator>(<value to cast>) ... ;"
     << endl ;
 
 

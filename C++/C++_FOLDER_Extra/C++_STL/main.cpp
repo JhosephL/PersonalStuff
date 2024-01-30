@@ -81,9 +81,38 @@ void function_vector ( void ) {
     cout << "\n\n\tvector_initialized:" << endl ;
     for ( vectorReverseIterator = vector_initialized.rbegin() ; vectorReverseIterator != vector_initialized.rend() ; vectorReverseIterator++ )
         cout << '\t' << *vectorReverseIterator << ' ' ;
-    
+
+    cout << endl << endl ;
+
     // - Operations - //
-    //// ...
+    //// Insert: iterator, value.
+    vectorIterator = vector_initialized.end() ;
+    vectorIterator = vector_initialized.insert ( vectorIterator , 5 ) ;
+    cout << "\tThe value returned by the operation is: " << *vectorIterator << endl ;
+    //// Insert range: position, container.
+    vectorIterator = next ( vector_initialized.begin() ) ;
+    vectorIterator = vector_initialized.insert ( vectorIterator , vector_sized.begin() , vector_sized.end() ) ;
+    cout << "\tThe value returned by the operation is: " << *vectorIterator << endl ;
+    //// Push back: value.
+    vector_initialized.push_back ( 6 ) ;
+    vectorIterator = prev ( vector_initialized.end() ) ;
+    cout << "\tThe last element of the container is: " << *vectorIterator << endl ;
+    //// Pop back: none.
+    vector_initialized.pop_back() ;
+    vectorIterator = prev ( vector_initialized.end() ) ;
+    cout << "\tThe last element of the container is: " << *vectorIterator << endl ;
+    //// Erase: position.
+    vectorIterator = prev ( vector_initialized.end() ) ;
+    vectorIterator = vector_initialized.erase ( vectorIterator ) ;
+    cout << "\tThe last element of the container is: " << *vectorIterator << endl ;
+    //// Erase: range.
+    vectorIterator = next ( vector_initialized.begin() ) ;
+    vectorIterator = vector_initialized.erase ( vectorIterator , vectorIterator+5 ) ;
+    cout << "\tThe first element of the container is: " << *vectorIterator << endl ;
+    //// Clean: none.
+    vector_initialized.clear() ;
+    bool bool_containerEmpty = vector_initialized.empty() ;
+    cout << "\tContainer empty?: " << boolalpha << bool_containerEmpty << endl ;
 
 }
 
