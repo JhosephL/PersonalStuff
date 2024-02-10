@@ -2,16 +2,22 @@
 // PREPROCESSOR DIRECTIVES
 #include <iostream> // For 'cout' and 'endl' functions
 //// For STL containers.
+////// Dynamic Access Memory.
 #include <array>
-#include <list>
 #include <vector>
 #include <deque>
+////// Non-Dynamic Access Memory.
+#include <list>
 
 using namespace std ;
 
 
 
 // GLOBAL STATEMENTS
+//// Functions.
+bool boolFunction_auxList ( const int& value ) {
+    return ( value%2!=0 ) ;
+}
 
 
 // PROTOTYPES
@@ -32,15 +38,15 @@ int main ( void ) {
 
     cout << endl << endl ;
 
-    function_list() ;
-
-    cout << endl << endl ;
-
     function_vector() ;
 
     cout << endl << endl ;
 
     function_deque() ;
+
+    cout << endl << endl ;
+
+    function_list() ;
     
 
     cout << "\n\n\n\tALL RIGHT!\n\n\n\n" << endl ;
@@ -96,21 +102,21 @@ void function_array ( void ) {
     for ( arrayIterator = array_initialized.cbegin() ; arrayIterator != array_initialized.end() ; arrayIterator++ )
         cout << '\t' << *arrayIterator << ' ' ;
     //// Reverse iterator from Head to Tail.
-    cout << "\n\n\tvector_initialized:" << endl ;
+    cout << "\n\n\tarray_initialized:" << endl ;
     for ( arrayReverseIterator = array_initialized.crend()-1 ; arrayReverseIterator != array_initialized.crbegin()-1 ; arrayReverseIterator-- )
         cout << '\t' << *arrayReverseIterator << ' ' ;
     //// Iterator from Tail to Head.
-    cout << "\n\n\tvector_initialized:" << endl ;
+    cout << "\n\n\tarray_initialized:" << endl ;
     for ( arrayIterator = array_initialized.end()-1 ; arrayIterator != array_initialized.cbegin()-1 ; arrayIterator-- )
         cout << '\t' << *arrayIterator << ' ' ;
     //// Reverse iterator from Tail to Head.
-    cout << "\n\n\tvector_initialized:" << endl ;
+    cout << "\n\n\tarray_initialized:" << endl ;
     for ( arrayReverseIterator = array_initialized.crbegin() ; arrayReverseIterator != array_initialized.crend() ; arrayReverseIterator++ )
         cout << '\t' << *arrayReverseIterator << ' ' ;
 
     cout << endl << endl ;
 
-    // - Operations - //
+    // - Modifications - //
     //// Swap: container.
     bool bool_lastElementsEqual = false ;
     arrayIterator = prev ( array_initialized.end() ) ;
@@ -119,13 +125,6 @@ void function_array ( void ) {
     array_initialized.swap ( array_sized ) ;
     bool_lastElementsEqual = ( *arrayIterator != array_sized.back() ) ;
     cout << "\tLast elements equal?: " << boolalpha << bool_lastElementsEqual << endl ;
-
-}
-
-
-void function_list ( void ) {
-
-    cout << "LIST" ;
 
 }
 
@@ -151,18 +150,18 @@ void function_vector ( void ) {
     vector<int>::reverse_iterator vectorReverseIterator ;
     //// for-loop forward.
     cout << "\n\n\tvector_empty:" << endl ;
-    for ( int counter = 0 ; counter <= vector_empty.size() ; counter++ )
-        if ( ! vector_empty.empty() )
+    if ( ! vector_empty.empty() )
+        for ( int counter = 0 ; counter < vector_empty.size() ; counter++ )
             cout << '\t' << vector_empty.at(counter) << ' ' ;
-        else
-            cout << "\t_" ;
+    else
+        cout << "\t_" ;
     //// for-loop backward.
     cout << "\n\n\tvector_empty:" << endl ;
-    for ( int counter = vector_empty.size() ; counter >= 0 ; counter-- )
-        if ( ! vector_empty.empty() )
+    if ( ! vector_empty.empty() )
+        for ( int counter = vector_empty.size() ; counter >= 0 ; counter-- )
             cout << '\t' << vector_empty[counter] << ' ' ;
-        else
-            cout << "\t_" ;
+    else
+        cout << "\t_" ;
     //// for-each.
     cout << "\n\n\tvector_sized:" << endl ;
     for ( const int& iterator : vector_sized )
@@ -186,7 +185,7 @@ void function_vector ( void ) {
 
     cout << endl << endl ;
 
-    // - Operations - //
+    // - Modifications - //
     //// Insert: iterator, value.
     vectorIterator = vector_initialized.end() ;
     vectorIterator = vector_initialized.insert ( vectorIterator , 5 ) ;
@@ -232,6 +231,122 @@ void function_vector ( void ) {
 void function_deque ( void ) {
 
     cout << "DEQUE" ;
+
+}
+
+
+void function_list ( void ) {
+
+    cout << "LIST" ;
+
+    // - Declarations - //
+    //// Empty declaration.
+    list<int> list_empty ;
+    //// Sized declaration.
+    list<int> list_sized(5) ;
+
+    // - Initialization - //
+    list<int> list_initialized(5,0) ;
+
+    // - Assignment - //
+    //// Filled assignment.
+    list_sized.assign(5,0) ;
+    //// Aggregate assignment.
+    list_initialized = { 0,1,2,3,4 } ;
+
+    // - Iterations - //
+    list<int>::iterator listIterator ;
+    list<int>::reverse_iterator listReverseIterator ;
+    //// NO for-loops forward neither backward.
+    cout << "\n\n\tlist_empty:" << endl ;
+    if ( list_empty.empty() )
+        cout << "\t_" ;
+    //// for-each.
+    cout << "\n\n\tlist_sized:" << endl ;
+    for ( const int& iterator : list_sized )
+        cout << '\t' << iterator << ' ' ;
+    //// Iterator from Head to Tail.
+    cout << "\n\n\tlist_initialized:" << endl ;
+    for ( listIterator = list_initialized.begin() ; listIterator != list_initialized.end() ; listIterator++ )
+        cout << '\t' << *listIterator << ' ' ;
+    //// Reverse iterator from Tail to Head.
+    cout << "\n\n\tlist_initialized:" << endl ;
+    for ( listReverseIterator = list_initialized.rbegin() ; listReverseIterator != list_initialized.rend() ; listReverseIterator++ )
+        cout << '\t' << *listReverseIterator << ' ' ;
+
+    cout << endl << endl ;
+
+    // - Modifications - //
+    //// Insert: iterator, element.
+    listIterator = list_initialized.end() ;
+    listIterator = list_initialized.insert ( listIterator , 5 ) ;
+    cout << "\tThe value returned by the operation is: " << *listIterator << endl ;
+    //// Insert: iterator, number of elements, elements.
+    listIterator = list_initialized.end() ;
+    listIterator = list_initialized.insert ( listIterator , 1 , 6 ) ;
+    cout << "\tThe value returned by the operation is: " << *listIterator << endl ;
+    //// Insert: iterator, iterator of second container, iterator of second container.
+    listIterator = list_initialized.begin() ;
+    listIterator = list_initialized.insert ( listIterator , list_sized.begin() , list_sized.end() ) ;
+    cout << "\tThe value returned by the operation is: " << *listIterator << endl ;
+    //// Push back: value.
+    list_initialized.push_back ( 7 ) ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    //// Pop back: none.
+    list_initialized.pop_back() ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    //// Push front: value.
+    list_initialized.push_front ( -1 ) ;
+    cout << "\tThe first element of the container is: " << list_initialized.front() << endl ;
+    //// Pop front: none.
+    list_initialized.pop_front() ;
+    cout << "\tThe first element of the container is: " << list_initialized.front() << endl ;
+    //// Swap: containter.
+    list_sized.swap ( list_initialized ) ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    list_initialized.swap ( list_sized ) ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    //// Erase: iterator.
+    listIterator = list_initialized.begin() ;
+    listIterator = list_initialized.erase ( listIterator ) ;
+    cout << "\tThe location of the iterator: " << boolalpha << ( listIterator == list_initialized.begin() ) << endl ;
+    //// Erase: iterator, iterator.
+    listIterator = list_initialized.begin() ;
+    advance ( listIterator , 5 ) ;
+    listIterator = list_initialized.erase ( list_initialized.begin() , listIterator ) ;
+    cout << "\tThe first element of the container is: " << list_initialized.front() << endl ;
+    //// Clear: none.
+    list_empty.clear() ;
+    bool bool_containerEmpty = list_empty.empty() ;
+    cout << "\tContainer empty?: " << boolalpha << bool_containerEmpty << endl ;
+
+    cout << endl  << endl ;
+
+    // - Operations - //
+    //// Remove: value.
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    list_initialized.remove ( list_initialized.back() ) ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    //// Remove if: function.
+    cout << "\tThe size of the container is: " << list_initialized.size() << endl ;
+    list_initialized.remove_if ( boolFunction_auxList ) ;
+    //// Unique: none.
+    cout << "\tThe size of the sized container is: " << list_sized.size() << endl ;
+    list_sized.unique() ;
+    cout << "\tThe size of the sized container is: " << list_sized.size() << endl ;
+    //// Merge: container.
+    cout << "\tThe size of the initialized container is: " << list_initialized.size() << endl ;
+    list_initialized.merge ( list_sized ) ;
+    cout << "\tThe size of the initialized container is: " << list_initialized.size() << endl ;
+    //// Sort: none.
+    list_initialized = { 4,3,2,1,0 } ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    list_initialized.sort() ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    //// Reverse: none.
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+    list_initialized.reverse() ;
+    cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
 
 }
 
