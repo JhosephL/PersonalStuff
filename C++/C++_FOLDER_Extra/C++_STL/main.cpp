@@ -8,6 +8,8 @@
 #include <deque>
 ////// Non-Dynamic Access Memory.
 #include <list>
+#include <stack>
+#include <queue>
 
 using namespace std ;
 
@@ -15,16 +17,20 @@ using namespace std ;
 
 // GLOBAL STATEMENTS
 //// Functions.
-bool boolFunction_auxList ( const int& value ) {
-    return ( value%2!=0 ) ;
-}
+bool boolFunction_auxList ( const int& value ) { return ( value%2 != 0 ) ; }
 
 
 // PROTOTYPES
+//// Lists
 void function_array ( void ) ;
-void function_list ( void ) ;
 void function_vector ( void ) ;
 void function_deque ( void ) ;
+void function_list ( void ) ;
+//// LIFO
+void function_stack ( void ) ;
+//// FIFO
+void function_queue ( void ) ;
+void function_priorityQueue ( void ) ;
 
 
 /* MAIN FUNCTION DEFINITION */
@@ -47,6 +53,14 @@ int main ( void ) {
     cout << endl << endl ;
 
     function_list() ;
+
+    cout << endl << endl ;
+
+    function_stack() ;
+
+    cout << endl << endl ;
+
+    function_queue() ;
     
 
     cout << "\n\n\n\tALL RIGHT!\n\n\n\n" << endl ;
@@ -232,6 +246,113 @@ void function_deque ( void ) {
 
     cout << "DEQUE" ;
 
+    // - Declarations - //
+    //// Empty declaration.
+    deque<int> deque_empty ;
+    //// Sized declaration.
+    deque<int> deque_sized(5) ;
+
+    // - Initialization - //
+    //// Filled initialization.
+    deque<int> deque_initialized(5,0) ;
+    //// Copied initialization.
+    deque<int> deque_copied(deque_initialized) ;
+
+    // - Assigment - //
+    //// Filled assignment.
+    deque_sized.assign(5,0) ;
+    //// Resized assignment.
+    deque_sized.resize(3) ;
+    deque_sized.resize(3,0) ;
+    //// Aggredate assigment.
+    deque_initialized = { 0,1,2,3,4 } ;
+
+    // - Iterations - //
+    deque<int>::const_iterator dequeConstIterator ;
+    deque<int>::const_reverse_iterator dequeConstReverseIterator ;
+    //// for-loop forward.
+    cout << "\n\n\tdeque_empty:" << endl ;
+    if ( ! deque_empty.empty() )
+        for ( int counter = 0 ; counter < deque_empty.size() ; counter++ )
+            cout << '\t' << deque_empty.at(counter) << ' ' ;
+    else
+        cout << "\t_" ;
+    //// for-loop backward.
+    cout << "\n\n\tdeque_empty:" << endl ;
+    if ( ! deque_empty.empty() )
+        for ( int counter = deque_empty.size() ; counter >= 0 ; counter-- )
+            cout << '\t' << deque_empty[counter] << ' ' ;
+    else
+        cout << "\t_" ;
+    //// for-each.
+    cout << "\n\n\tdeque_sized:" << endl ;
+    for ( const int& iterator : deque_sized )
+        cout << '\t' << iterator << ' ' ;
+    //// Iterator from Head to Tail.
+    cout << "\n\n\tdeque_initialized:" << endl ;
+    for ( dequeConstIterator = deque_initialized.cbegin() ; dequeConstIterator != deque_initialized.cend() ; dequeConstIterator++ )
+        cout << '\t' << *dequeConstIterator << ' ' ;
+    //// Reverse iterator from Head to Tail.
+    cout << "\n\n\tdeque_initialized:" << endl ;
+    for ( dequeConstReverseIterator = deque_initialized.crend()-1 ; dequeConstReverseIterator != deque_initialized.crbegin()-1 ; dequeConstReverseIterator-- )
+        cout << '\t' << *dequeConstReverseIterator << ' ' ;
+    //// Iterator from Tail to Head.
+    cout << "\n\n\tdeque_initialized:" << endl ;
+    for ( dequeConstIterator = deque_initialized.cend()-1 ; dequeConstIterator != deque_initialized.cbegin()-1 ; dequeConstIterator-- )
+        cout << '\t' << *dequeConstIterator << ' ' ;
+    //// Reverse iterator from Tail to Head.
+    cout << "\n\n\tdeque_initialized:" << endl ;
+    for ( dequeConstReverseIterator = deque_initialized.crbegin() ; dequeConstReverseIterator != deque_initialized.crend() ; dequeConstReverseIterator++ )
+        cout << '\t' << *dequeConstReverseIterator << ' ' ;
+
+    cout << endl << endl ;
+
+    // - Modifications - //
+    deque<int>::iterator dequeIterator ;
+    deque<int>::reverse_iterator dequeReverseIterator ;
+    //// Insert: iterator, element.
+    dequeIterator = deque_initialized.end() ;
+    dequeIterator = deque_initialized.insert ( dequeIterator , 5 ) ;
+    cout << "\tThe value returned by the operation is: " << *dequeIterator << endl ;
+    //// Insert: iterator, number of elements, elements.
+    dequeIterator = deque_initialized.end() ;
+    dequeIterator = deque_initialized.insert ( dequeIterator , 1 , 6 ) ;
+    cout << "\tThe value returned by the operation is: " << *dequeIterator << endl ;
+    //// Insert: iterator, iterator of second container, iterator of second container.
+    dequeIterator = deque_initialized.begin() ;
+    dequeIterator = deque_initialized.insert ( dequeIterator , deque_sized.begin() , deque_sized.end() ) ;
+    cout << "\tThe value returned by the operation is: " << *dequeIterator << endl ;
+    //// Push back: value.
+    deque_initialized.push_back ( 7 ) ;
+    cout << "\tThe last element of the container is: " << deque_initialized.back() << endl ;
+    //// Pop back: none.
+    deque_initialized.pop_back() ;
+    cout << "\tThe last element of the container is: " << deque_initialized.back() << endl ;
+    //// Push front: value.
+    deque_initialized.push_front ( -1 ) ;
+    cout << "\tThe first element of the container is: " << deque_initialized.front() << endl ;
+    //// Pop front: none.
+    deque_initialized.pop_front() ;
+    cout << "\tThe first element of the container is: " << deque_initialized.front() << endl ;
+    //// Swap: containter.
+    deque_sized.swap ( deque_initialized ) ;
+    cout << "\tThe last element of the container is: " << deque_initialized.back() << endl ;
+    deque_initialized.swap ( deque_sized ) ;
+    cout << "\tThe last element of the container is: " << deque_initialized.back() << endl ;
+    //// Erase: iterator.
+    dequeIterator = deque_initialized.begin() ;
+    dequeIterator = deque_initialized.erase ( dequeIterator ) ;
+    cout << "\tThe location of the iterator: " << boolalpha << ( dequeIterator == deque_initialized.begin() ) << endl ;
+    //// Erase: iterator, iterator.
+    dequeIterator = deque_initialized.begin() ;
+    advance ( dequeIterator , 3 ) ;
+    dequeIterator = deque_initialized.erase ( deque_initialized.begin() , dequeIterator ) ;
+    cout << "\tThe first element of the container is: " << deque_initialized.front() << endl ;
+    //// Clear: none.
+    deque_empty.clear() ;
+    bool bool_containerEmpty = deque_empty.empty() ;
+    cout << "\tContainer empty?: " << boolalpha << bool_containerEmpty << endl ;
+
 }
 
 
@@ -320,7 +441,7 @@ void function_list ( void ) {
     bool bool_containerEmpty = list_empty.empty() ;
     cout << "\tContainer empty?: " << boolalpha << bool_containerEmpty << endl ;
 
-    cout << endl  << endl ;
+    cout << endl ;
 
     // - Operations - //
     //// Remove: value.
@@ -347,6 +468,20 @@ void function_list ( void ) {
     cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
     list_initialized.reverse() ;
     cout << "\tThe last element of the container is: " << list_initialized.back() << endl ;
+
+}
+
+
+void function_stack ( void ) {
+
+    cout << "STACK" ;
+
+}
+
+
+void function_queue ( void ) {
+
+    cout << "QUEUE" ;
 
 }
 
