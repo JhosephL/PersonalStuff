@@ -476,12 +476,72 @@ void function_stack ( void ) {
 
     cout << "STACK" ;
 
+    // - Declaration - //
+    stack<int> stack_empty ;
+
+    // - Initializations - //
+    //// Transformed initialization.
+    deque<int> deque_ex(5,0) ;
+    stack<int> stack_translated(deque_ex) ;
+    //// Copied initialization.
+    stack<int> stack_copied(stack_translated) ;
+
+    // - Assignments - //
+    stack_translated = stack_copied ;
+
+    cout << endl << endl ;
+
+    // - Funtions - //
+    //// Push: value.
+    stack_empty.push ( 1 ) ;
+    cout << "\tTop element: " << stack_empty.top() << endl ;
+    //// Pop: none.
+    stack_empty.pop() ;
+    if ( stack_empty.empty() )
+        cout << "\tTop element: " << "NULL" << endl ;
+    else
+        cout << "\tTop element: " << stack_empty.top() << endl ;
+    //// Swap: stack.
+    stack_empty.swap ( stack_copied ) ;
+    cout << "\tSize: " << stack_empty.size() << endl ;
+    cout << "\tSize: " << stack_copied.size() << endl ;
+
 }
 
 
 void function_queue ( void ) {
 
     cout << "QUEUE" ;
+
+    // - Declaration - //
+    queue<int> queue_empty ;
+
+    // - Initializations - //
+    //// Transformed initialization.
+    deque<int> deque_ex(5,0) ;
+    queue<int> queue_translated(deque_ex) ;
+    //// Copied initialization.
+    queue<int> queue_copied(queue_translated) ;
+
+    // - Assignments - //
+    queue_translated = queue_copied ;
+
+    cout << endl << endl ;
+
+    // - Funtions - //
+    //// Push: value.
+    queue_empty.push ( 1 ) ;
+    cout << "\tFront element: " << queue_empty.front() << endl ;
+    //// Pop: none.
+    queue_empty.pop() ;
+    if ( queue_empty.empty() && queue_empty.size()==0 )
+        cout << "\tBack element: " << "NULL" << endl ;
+    else
+        cout << "\tBack element: " << queue_empty.back() << endl ;
+    //// Swap: stack.
+    queue_empty.swap ( queue_copied ) ;
+    cout << "\tSize: " << queue_empty.size() << endl ;
+    cout << "\tSize: " << queue_copied.size() << endl ;
 
 }
 
