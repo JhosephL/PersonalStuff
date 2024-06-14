@@ -1,0 +1,1 @@
+Get-FileHash -Path <path> -Algorithm <algorithm>
