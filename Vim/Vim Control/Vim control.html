@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Terminal Commands</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <head>
+    <style>
+        @page {
+            margin: 10px;
+        }
+        * {
+            color: black;
+        }
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+        h2 {
+            margin-top: 80px;
+            font-weight: 700;
+        }
+        h3 {
+            font-weight: 700;
+        }
+        body {
+            font-size: 12px;
+        }
+        code {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<h1 align="center" style="margin-bottom: 80px">
+    VIM CONTROL
+</h1>
+<h1 id="terminal-commands">Terminal Commands</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vim &lt;FILE NAME&gt;</code></td>
+<td>Create a file from terminal.</td>
+</tr>
+<tr>
+<td><code>:!&lt;COMMAND LINE&gt;</code></td>
+<td>Execute terminal commands from Vim.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h1 id="vim-modes">Vim modes</h1>
+<h2 id="-n--normal-mode">[ n ] Normal mode</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Escape key</em></td>
+<td>Enter in normal mode.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-i--insert-mode">[ i ] Insert mode</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>i (upper case) key</em></td>
+<td>Type at the beginning of the current line.</td>
+</tr>
+<tr>
+<td><em>i (lower case) key</em> or <em>Insert key</em></td>
+<td>Type before the selected character.</td>
+</tr>
+<tr>
+<td><em>a (upper case) key</em></td>
+<td>Type at the end of the current line.</td>
+</tr>
+<tr>
+<td><em>a (lower case) key</em></td>
+<td>Type after the selected character.</td>
+</tr>
+<tr>
+<td><em>o (upper case) key</em></td>
+<td>Type above of the current line by adding a new one.</td>
+</tr>
+<tr>
+<td><em>o (lower case) key</em></td>
+<td>Type below of the current line by adding a new one.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-v--visual-mode">[ v ] Visual mode</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>v (lower case) key</em></td>
+<td>Select characters one by one.</td>
+</tr>
+<tr>
+<td><em>v (upper case) key</em></td>
+<td>Select lines.</td>
+</tr>
+<tr>
+<td><em>Control key + v (lower case) key</em></td>
+<td>Select block of characters.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h1 id="vim-commands">Vim commands</h1>
+<h2 id="file-control">File control</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>:e &lt;FILE NAME&gt;</code></td>
+<td>New file.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:q</code></td>
+<td>Quit.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:qa</code></td>
+<td>Quit of all Vim open windows.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:q!</code></td>
+<td>Quit abruptly, without saving changes.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:qa!</code></td>
+<td>Quit abruptly of all Vim open windows.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:w</code></td>
+<td>Save work.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:wq</code></td>
+<td>Save work and quit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-changes">File changes</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>u</code></td>
+<td>Undoing last changes.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>U</code></td>
+<td>Undoing just the last change.</td>
+</tr>
+<tr>
+<td>[ n ] ; <em>Control key + r (both cases)</em></td>
+<td>Redoing.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h2 id="file-movement">File movement</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>h</code></td>
+<td>Move left.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>k</code></td>
+<td>Move down.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>j</code></td>
+<td>Move up.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>l</code></td>
+<td>Move right.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>w</code></td>
+<td>Move to the next word.</td>
+</tr>
+<tr>
+<td>[ n ] ; <em>Enter key</em></td>
+<td>Move to the next line.</td>
+</tr>
+<tr>
+<td>[ n ] ; <em>Number</em> ; <em>Movement key</em></td>
+<td>Move by specifying characters.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>0</code></td>
+<td>Go to the first character of line.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>^</code></td>
+<td>Go to the last character of line.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>{</code></td>
+<td>Move backward on paragraphs.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>}</code></td>
+<td>Move forward on paragraphs.</td>
+</tr>
+<tr>
+<td>[ n ] ; <em>Control key + f (both cases)</em></td>
+<td>Move forward on page.</td>
+</tr>
+<tr>
+<td>[ n ] ; <em>Control key + b (both cases)</em></td>
+<td>Move backward on page.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>gg</code></td>
+<td>Go to the first line.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>G</code></td>
+<td>Go to the last line.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h2 id="copy">Copy</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>y</code></td>
+<td>Copy one character.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>yy</code></td>
+<td>Copy one line.</td>
+</tr>
+<tr>
+<td>[ n ] ; [ v ] ; <em>Select characters</em> ; <code>y</code></td>
+<td>Copy more than one character.</td>
+</tr>
+<tr>
+<td><em>Select characters</em> ; <code>&quot;&lt;LETTER&gt;y</code></td>
+<td>Copy characters to the associated letter.</td>
+</tr>
+<tr>
+<td><em>Select characters</em> ; <code>&quot;+y</code></td>
+<td>Copy characters to the clipboard.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cut">Cut</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>x</code></td>
+<td>Cut the selected character.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>X</code></td>
+<td>Cut the character before the selected one.</td>
+</tr>
+<tr>
+<td>[ n ] ; [ v ] ; <em>Select characters</em> ; <code>x</code></td>
+<td>Cut more than one character.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>dd</code></td>
+<td>Cut one line.</td>
+</tr>
+<tr>
+<td>[ n ] ; [ v ] ; <em>Select characters</em> ; <code>X</code></td>
+<td>Cut more than one line.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="paste">Paste</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>P</code></td>
+<td>Paste before cursor.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>p</code></td>
+<td>Paste after cursor.</td>
+</tr>
+<tr>
+<td>[ n ] ; [ v ] ; <em>Select characters</em> ; <code>p</code></td>
+<td>Paste over characters.</td>
+</tr>
+<tr>
+<td><em>Select characters</em> ; <code>&quot;&lt;LETTER&gt;p</code></td>
+<td>Paste characters from the associated letter.</td>
+</tr>
+<tr>
+<td><em>Select characters</em> ; <code>&quot;+p</code></td>
+<td>Paste characters from the clipboard.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h2 id="find">Find</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>:/&lt;PATTERN&gt;</code> ; <em>Enter key</em></td>
+<td>Find forward the given pattern, highlight occurrences, and reallocate cursor.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:?&lt;PATTERN&gt;</code> ; <em>Enter key</em></td>
+<td>Find backward the given pattern, highlight occurrences, and reallocate cursor.</td>
+</tr>
+<tr>
+<td><em>While finding pattern</em> ; <code>n</code></td>
+<td>Navegate forward through occurrences.</td>
+</tr>
+<tr>
+<td><em>While finding pattern</em> ; <code>N</code></td>
+<td>Navegate backward through occurrences.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="replace">Replace</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>r</code> ; <em>Type character</em></td>
+<td>Replace character.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>R</code> ; <em>Type characters</em> ; <em>Escape key</em></td>
+<td>Replace characters.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; <code>:s/&lt;PATTERN&gt;/&lt;REPLACEMENT&gt;</code></td>
+<td>Find and replace the first occurrence in the current line.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:s/&lt;PATTERN&gt;/&lt;REPLACEMENT&gt;/g</code></td>
+<td>Find and replace all the occurrences in the current line.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:%s/&lt;PATTERN&gt;/&lt;REPLACEMENT&gt;</code></td>
+<td>Find and replace the first occurrence in all the lines.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:%s/&lt;PATTERN&gt;/&lt;REPLACEMENT&gt;/g</code></td>
+<td>Find and replace all the occurrences in all the lines.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:%s/&lt;PATTERN&gt;/&lt;REPLACEMENT&gt;/gc</code></td>
+<td>Find and replace all the occurrences in all the lines, with confirmation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-commands">Other commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ n ] ; [ visual block ] ; <em>Select characters</em> ; <code>I</code> or <code>A</code> ; <em>Type characters</em> ; <em>Escape key</em></td>
+<td>Multicursor.</td>
+</tr>
+<tr>
+<td>[ n ] ; <code>:split &lt;FILENAME&gt;</code> or <code>:vsplit &lt;FILENAME&gt;</code></td>
+<td>Split files.</td>
+</tr>
+<tr>
+<td>[ n ] ; <em>Control key + w + w</em></td>
+<td>Navegate between splited files.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h1 id="notes">Notes</h1>
+<ul>
+<li>There is no &quot;delete&quot; option; by cutting and no pasting is enough. It applies for &quot;multicursor&quot;.</li>
+</ul>
+
+            
+            
+        </body>
+        </html>
