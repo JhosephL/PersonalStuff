@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Git Configuration</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <head>
+    <style>
+        @page {
+            margin: 10px;
+        }
+        * {
+            color: black;
+        }
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+        h2 {
+            margin-top: 80px;
+            font-weight: 700;
+        }
+        h3 {
+            font-weight: 700;
+        }
+        body {
+            font-size: 12px;
+        }
+        code {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<h1 align="center">
+    GIT COMMANDS
+</h1>
+<h1 id="git-configuration">Git Configuration</h1>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git config --global user.name &quot;&lt;USERNAME&gt;&quot;</code></td>
+<td>Configure the user name.</td>
+</tr>
+<tr>
+<td><code>git config --global user.email &quot;&lt;EMAIL&gt;&quot;</code></td>
+<td>Configure the email address.</td>
+</tr>
+<tr>
+<td><code>git config --global core.editor &quot;&lt;any text editor&gt;&quot;</code></td>
+<td>Configure a specific text editor.</td>
+</tr>
+<tr>
+<td><code>git config --list</code></td>
+<td>Show the current configuration.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h1 id="git-on-local-control">Git on Local Control</h1>
+<h2 id="git-initial">Git initial</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git init</code></td>
+<td>Create a local repository.</td>
+</tr>
+<tr>
+<td><code>git status</code></td>
+<td>Show the repository status.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-add">Git add</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git add &lt;FILE&gt;</code></td>
+<td>Add a file to the staging area.</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td>Add all files to the staging area.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-commit">Git commit</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git commit &lt;PATHFILE&gt; -m &quot;&lt;MSG&gt;&quot;</code></td>
+<td>Commit a file.</td>
+</tr>
+<tr>
+<td><code>git commit -m &quot;&lt;MSG&gt;&quot;</code></td>
+<td>Commit all files.</td>
+</tr>
+<tr>
+<td><code>git commit -am &quot;&lt;MSG&gt;&quot;</code></td>
+<td>Add and commit all files.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-list">Git list</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git ls-files</code></td>
+<td>Show repository files.</td>
+</tr>
+<tr>
+<td><code>git ls-lrt</code></td>
+<td>Show branch files.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h2 id="git-log">Git log</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git log</code></td>
+<td>Show commits record.</td>
+</tr>
+<tr>
+<td><code>git log --oneline</code></td>
+<td>Show each log event in one line.</td>
+</tr>
+<tr>
+<td><code>git log &lt;BRANCHNAME&gt;</code></td>
+<td>Show commits record of a branch.</td>
+</tr>
+<tr>
+<td><code>git log --oneline &lt;BRANCHNAME&gt;</code></td>
+<td>Show commits record of a branch in one line.</td>
+</tr>
+<tr>
+<td><code>git log --graph</code></td>
+<td>Show each log referent to a branch.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-branch">Git branch</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git branch</code></td>
+<td>Show branches.</td>
+</tr>
+<tr>
+<td><code>git branch -a</code></td>
+<td>Show all branches.</td>
+</tr>
+<tr>
+<td><code>git branch &lt;BRANCHNAME&gt;</code></td>
+<td>Add a branch.</td>
+</tr>
+<tr>
+<td><code>git switch &lt;BRANCH&gt;</code></td>
+<td>Move between branches.</td>
+</tr>
+<tr>
+<td><code>git branch -d &lt;BRANCHNAME&gt;</code></td>
+<td>Remove a local branch.</td>
+</tr>
+<tr>
+<td><code>git branch --cached &lt;BRANCHNAME&gt;</code></td>
+<td>Remove a file from the repository.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-check-out">Git check-out</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git checkout</code></td>
+<td>Show the current branch.</td>
+</tr>
+<tr>
+<td><code>git checkout &lt;BRANCH&gt;</code></td>
+<td>Add and switch to a new branch.</td>
+</tr>
+<tr>
+<td><code>git checkout--&lt;FILENAME&gt;</code></td>
+<td>Revert changes before a commit.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h2 id="git-difference">Git difference</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git diff &lt;FILENAME&gt;</code></td>
+<td>Show differences between the file and its snapshot.</td>
+</tr>
+<tr>
+<td><code>git diff &lt;COMMIT&gt; &lt;ANOTHER_COMMIT&gt;</code></td>
+<td>Show the differences between commits.</td>
+</tr>
+<tr>
+<td><code>git diff &lt;BRANCH&gt; &lt;ANOTHER_BRANCH&gt;</code></td>
+<td>Show the differences between branches.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-commands">Other commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git merge &lt;BRANCH&gt;</code></td>
+<td>Merge changes from the current branch to another.</td>
+</tr>
+<tr>
+<td><code>git rm &lt;BRANCHNAME&gt;</code></td>
+<td>Remove a file from everywhere.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h1 id="git-on-remote-control">Git on Remote Control</h1>
+<h2 id="git-pull">Git pull</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git pull &lt;BRANCH&gt;</code></td>
+<td>Pull a branch.</td>
+</tr>
+<tr>
+<td><code>git pull &lt;REPO&gt; &lt;BRANCH&gt;</code></td>
+<td>Pull a branch specifying a repository.</td>
+</tr>
+<tr>
+<td><code>git pull &lt;REPO&gt; &lt;BRANCH&gt; --allow-unrelated-histories</code></td>
+<td>Solve the &quot;fatal: refusing to merge unrelated histories&quot; error.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-push">Git push</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git push &lt;BRANCH&gt;</code></td>
+<td>Push a branch.</td>
+</tr>
+<tr>
+<td><code>git push &lt;REPO&gt; &lt;BRANCH&gt;</code></td>
+<td>Push a branch specifying a repository.</td>
+</tr>
+<tr>
+<td><code>git push -u &lt;REPO&gt; &lt;BRANCH&gt;</code></td>
+<td>Authenticate local changes to a remote repository.</td>
+</tr>
+<tr>
+<td><code>git push --set-upstream &lt;REPO&gt; &lt;BRANCH&gt;</code></td>
+<td>Upload changes to a repository.</td>
+</tr>
+<tr>
+<td><code>git push origin -d &lt;BRANCH&gt;</code></td>
+<td>Remove a remote branch.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="git-remote">Git remote</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git remote</code></td>
+<td>Show the list of repositories.</td>
+</tr>
+<tr>
+<td><code>git remote -v</code></td>
+<td>Show information about repositories.</td>
+</tr>
+<tr>
+<td><code>git remote rename &lt;OLDNAME&gt; &lt;NEWNAME&gt;</code></td>
+<td>Rename a repository.</td>
+</tr>
+<tr>
+<td><code>git remote add &lt;REPO&gt; &lt;URL&gt;</code></td>
+<td>Connect Git to a remote repository.</td>
+</tr>
+<tr>
+<td><code>git remote remove</code></td>
+<td>Remove a repository.</td>
+</tr>
+<tr>
+<td><code>git remote rm &lt;REPO&gt;</code></td>
+<td>Remove a repository specifying a repository.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h2 id="other-commands-1">Other commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git clone &quot;&lt;URL&gt;&quot;</code></td>
+<td>Download a repository with changes tracking.</td>
+</tr>
+<tr>
+<td><code>git fork &quot;&lt;URL&gt;&quot;</code></td>
+<td>Download a repository without changes tracking.</td>
+</tr>
+<tr>
+<td><code>git fetch &lt;REMOTE_BRANCH_PATH&gt;</code></td>
+<td>Update remote-tracking branches.</td>
+</tr>
+<tr>
+<td><code>git archive master --format=zip -output=../&lt;FILE&gt;.zip</code></td>
+<td>Shelve a branch locally.</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"> </div>
+<h1 align="center">
+    GIT FLOW
+</h1>
+<p><img src="https://github.com/JhosephL/PersonalStuff/assets/68712197/7c960ab4-bc49-4b70-897b-4d853afe35ba" alt="Git's working scheme"></p>
+
+            
+            
+        </body>
+        </html>
